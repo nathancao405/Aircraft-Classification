@@ -6,4 +6,4 @@ Aircraft-Classification/
 ├── .gitignore
 ├── aircraft_classifier.keras
 ├── class_names.txt
-└── figures/
+└── aircraft_classifier.keras/
