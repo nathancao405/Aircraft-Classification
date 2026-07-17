@@ -1,35 +1,41 @@
-# Aircraft Classification using Deep Learning
+# ✈️ Aircraft Classification using TensorFlow
 
-## Overview
+An end-to-end deep learning project that classifies **100 aircraft variants** using the **FGVC Aircraft Dataset**. The project leverages **transfer learning with MobileNetV2**, TensorFlow data pipelines, and fine-tuning to build an image classification model capable of distinguishing visually similar aircraft.
 
-This project builds an end-to-end deep learning image classifier capable of identifying **100 different aircraft variants** using TensorFlow and MobileNetV2. The model uses transfer learning and fine-tuning to classify aircraft images from the FGVC Aircraft Dataset.
+---
 
-This project demonstrates the complete machine learning workflow, including:
+## Project Overview
 
-- Data preprocessing
-- Exploratory data analysis (EDA)
-- TensorFlow data pipelines
-- Data augmentation
-- Transfer learning with MobileNetV2
-- Model fine-tuning
-- Performance evaluation
-- Prediction visualization
+This project demonstrates the complete deep learning workflow from raw image data to model evaluation. The primary objective was to build a classifier capable of recognizing aircraft variants despite subtle visual differences between classes.
+
+### Skills Demonstrated
+
+- Deep Learning with TensorFlow/Keras
+- Transfer Learning
+- Fine-Tuning Pretrained Models
+- Image Preprocessing
+- TensorFlow Data Pipelines (`tf.data`)
+- Data Augmentation
+- Model Evaluation
+- Classification Metrics
+- Jupyter Notebook Development
 
 ---
 
 ## Dataset
 
-**Dataset:** FGVC Aircraft Dataset
+**FGVC Aircraft Dataset**
 
-- 100 aircraft variants
-- Approximately 10,000 aircraft images
-- Images divided into training, validation, and testing sets
+- **100 aircraft variants**
+- **~10,000 aircraft images**
+- Training, validation, and testing splits
+- Fine-grained aircraft classification benchmark
 
-The dataset can be downloaded from the official FGVC Aircraft website.
+> **Note:** The dataset is not included in this repository due to its size. It can be downloaded from the official FGVC Aircraft Dataset website.
 
 ---
 
-## Technologies Used
+## Technologies
 
 - Python
 - TensorFlow / Keras
@@ -44,27 +50,41 @@ The dataset can be downloaded from the official FGVC Aircraft website.
 
 ## Model Architecture
 
-The classifier uses **MobileNetV2** pretrained on ImageNet.
+The model uses **MobileNetV2** pretrained on **ImageNet** as the feature extractor.
 
-Model pipeline:
+### Pipeline
 
-- Data Augmentation
-- MobileNetV2 Feature Extractor
-- Global Average Pooling
-- Dropout
-- Dense Softmax Output Layer (100 classes)
+```
+Input Image
+      │
+Data Augmentation
+      │
+MobileNetV2 (Pretrained)
+      │
+Global Average Pooling
+      │
+Dropout
+      │
+Dense Softmax Layer
+      │
+100 Aircraft Classes
+```
 
-Transfer learning was first performed by freezing the pretrained network. The final 30 layers were then unfrozen and fine-tuned using a smaller learning rate to improve aircraft-specific classification performance.
+Transfer learning was first performed with the pretrained backbone frozen. The final 30 layers were then unfrozen and fine-tuned using a smaller learning rate to improve aircraft-specific feature learning.
 
 ---
 
 ## Results
 
-Final Test Accuracy:
+| Metric | Value |
+|---------|-------:|
+| Number of Classes | 100 |
+| Training Images | 3,334 |
+| Validation Images | 3,333 |
+| Testing Images | 3,333 |
+| Final Test Accuracy | **29.7%** |
 
-**29.7%**
-
-Considering the dataset contains **100 visually similar aircraft variants**, this demonstrates the difficulty of fine-grained image classification.
+Although the overall accuracy appears modest, this dataset represents a **fine-grained classification problem**, where many aircraft variants have extremely similar visual characteristics. Distinguishing between these aircraft is significantly more challenging than standard image classification datasets.
 
 ---
 
@@ -74,28 +94,46 @@ Considering the dataset contains **100 visually similar aircraft variants**, thi
 Aircraft-Classification/
 │
 ├── Aircraft_Classification.ipynb
-├── README.md
-├── requirements.txt
 ├── aircraft_classifier.keras
 ├── class_names.txt
-└── figures/
+├── README.md
+├── requirements.txt
+└── .gitignore
 ```
 
 ---
 
 ## Future Improvements
 
-Potential improvements include:
+Possible enhancements include:
 
-- Training on higher-resolution images
-- Testing EfficientNet or ResNet architectures
-- Hyperparameter tuning
-- Larger batch sizes
-- More advanced data augmentation
+- Experimenting with EfficientNet and ResNet architectures
+- Hyperparameter optimization
+- Higher-resolution image inputs
+- Stronger data augmentation techniques
+- Learning rate scheduling
 - Class imbalance analysis
+- Top-5 accuracy evaluation
+
+---
+
+## How to Run
+
+1. Clone the repository.
+2. Install the required packages:
+
+```bash
+pip install -r requirements.txt
+```
+
+3. Download the FGVC Aircraft Dataset and place it in the expected directory.
+4. Open `Aircraft_Classification.ipynb`.
+5. Run the notebook from top to bottom.
 
 ---
 
 ## Author
 
-Nathan Cao
+**Nathan Cao**
+
+Data Science & Machine Learning Portfolio Project
