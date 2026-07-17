@@ -1,0 +1,9 @@
+Aircraft-Classification/
+│
+├── Aircraft_Classification.ipynb
+├── README.md
+├── requirements.txt
+├── .gitignore
+├── aircraft_classifier.keras
+├── class_names.txt
+└── figures/
