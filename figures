@@ -1,0 +1,13 @@
+## Training Visualizations
+
+### Accuracy
+
+![Accuracy](figures/accuracy.png)
+
+### Loss
+
+![Loss](figures/loss.png)
+
+### Sample Predictions
+
+![Predictions](figures/sample_predictions.png)
