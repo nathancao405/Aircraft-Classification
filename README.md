@@ -87,11 +87,11 @@ Transfer learning was first performed with the pretrained backbone frozen. The f
 
 ### Training Accuracy
 
-![Accuracy](figures/accuracy.png)
+![Accuracy](accuracy.png)
 
 ### Training Loss
 
-![Loss](figures/loss.png)
+![Loss](loss.png)
 
 Although the overall accuracy appears modest, this dataset represents a **fine-grained classification problem**, where many aircraft variants have extremely similar visual characteristics. Distinguishing between these aircraft is significantly more challenging than standard image classification datasets.
 
