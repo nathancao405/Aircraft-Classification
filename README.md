@@ -22,6 +22,14 @@ This project demonstrates the complete deep learning workflow from raw image dat
 
 ---
 
+## Key Features
+
+- Built an end-to-end TensorFlow image classification pipeline
+- Implemented transfer learning with MobileNetV2
+- Fine-tuned pretrained layers for improved aircraft recognition
+- Created efficient TensorFlow `tf.data` input pipelines
+- Applied data augmentation to improve model generalization
+- Evaluated model performance using accuracy and classification metrics
 ## Dataset
 
 **FGVC Aircraft Dataset**
